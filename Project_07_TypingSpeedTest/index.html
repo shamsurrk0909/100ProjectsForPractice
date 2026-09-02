@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 10 — Typing Speed Test</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="card" role="main" aria-labelledby="title">
+      <header>
+        <div class="logo">TS</div>
+        <div>
+          <h1 id="title">Day 10: Typing Speed Test</h1>
+          <p class="lead">
+            Measure typing speed (WPM) and accuracy. Start typing or press Start
+            to begin the timer.
+          </p>
+        </div>
+      </header>
+
+      <section class="controls">
+        <div class="left">
+          <label class="small"
+            >Duration:
+            <select id="duration">
+              <option value="15">15s</option>
+              <option value="30">30s</option>
+              <option value="60" selected>60s</option>
+              <option value="120">120s</option>
+            </select>
+          </label>
+          <button id="startBtn" class="btn">Start</button>
+          <button id="restartBtn" class="btn secondary">Restart</button>
+        </div>
+
+        <div class="stats" aria-live="polite">
+          <div class="stat">
+            <div class="label">Time</div>
+            <div id="time" class="value">00:00</div>
+          </div>
+          <div class="stat">
+            <div class="label">WPM</div>
+            <div id="wpm" class="value">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">CPM</div>
+            <div id="cpm" class="value">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Accuracy</div>
+            <div id="accuracy" class="value">100%</div>
+          </div>
+          <div class="stat">
+            <div class="label">Errors</div>
+            <div id="errors" class="value">0</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="test-area">
+        <div id="quote" class="quote" aria-hidden="false"></div>
+        <label for="input" class="sr-only">Typing input</label>
+        <textarea
+          id="input"
+          placeholder="Start typing here..."
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        ></textarea>
+        <div class="hint muted">
+          Tip: Backspace is allowed — accuracy is calculated based on typed
+          characters vs correct characters.
+        </div>
+      </section>
+
+      <section id="final" class="final hidden" role="status" aria-live="polite">
+        <h3>Results</h3>
+        <div class="final-grid">
+          <div>
+            <strong>WPM</strong>
+            <div id="finalWpm" class="big">0</div>
+          </div>
+          <div>
+            <strong>Accuracy</strong>
+            <div id="finalAcc" class="big">0%</div>
+          </div>
+          <div>
+            <strong>CPM</strong>
+            <div id="finalCpm" class="big">0</div>
+          </div>
+          <div>
+            <strong>Errors</strong>
+            <div id="finalErr" class="big">0</div>
+          </div>
+        </div>
+        <button id="tryAgain" class="btn">Try again</button>
+      </section>
+
+      <details style="margin-top: 14px">
+        <summary>How it works (short)</summary>
+        <p class="small">
+          The script renders a sample text as individual character spans. As the
+          user types, each input char is compared against the reference char at
+          the same position and receives a class: correct / incorrect / pending.
+          A countdown timer runs for the chosen duration. WPM = (correctChars /
+          5) / minutes; accuracy = (correctChars / typedChars) * 100. Results
+          shown when time ends.
+        </p>
+      </details>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
