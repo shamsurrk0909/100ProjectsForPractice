@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 3 — Form Validation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card" role="main">
+    <header>
+      <div class="logo">FV</div>
+      <div>
+        <h1>Day 3: Form Validation</h1>
+        <p class="lead">Validate signup/login inputs with regex and DOM events. Real-time feedback, password policy, and accessible error messages.</p>
+      </div>
+    </header>
+
+    <section class="form-wrap">
+      <form id="signupForm" novalidate>
+        <div class="field">
+          <label for="name">Full name<span class="req">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+          <div class="error" id="nameError" aria-live="polite"></div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email<span class="req">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+          <div class="error" id="emailError" aria-live="polite"></div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password<span class="req">*</span></label>
+          <div class="pw-row">
+            <input id="password" name="password" type="password" autocomplete="new-password" required />
+            <button type="button" id="togglePwd" class="tiny-btn" aria-label="Show password">Show</button>
+          </div>
+          <div class="small">Minimum 8 chars, include uppercase, lowercase, number, and special character.</div>
+          <div class="strength" aria-hidden="true"><i id="pwBar"></i></div>
+          <div class="error" id="passwordError" aria-live="polite"></div>
+        </div>
+
+        <div class="field">
+          <label for="confirm">Confirm password<span class="req">*</span></label>
+          <input id="confirm" name="confirm" type="password" autocomplete="new-password" required />
+          <div class="error" id="confirmError" aria-live="polite"></div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+91 98765 43210" />
+          <div class="error" id="phoneError" aria-live="polite"></div>
+        </div>
+
+        <div class="field checkbox">
+          <label><input id="terms" name="terms" type="checkbox" /> I agree to the terms <span class="req">*</span></label>
+          <div class="error" id="termsError" aria-live="polite"></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn" class="btn">Sign up</button>
+          <button type="button" id="resetBtn" class="btn secondary">Reset</button>
+        </div>
+
+        <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="notes">
+      <details>
+        <summary>How it works (short)</summary>
+        <p>The JS attaches input and submit listeners. It uses regex to validate email and password rules, updates inline error messages, updates a visual strength bar, and prevents submission until all checks pass.</p>
+      </details>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
