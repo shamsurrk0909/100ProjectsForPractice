@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 9 — Flashcard Learning App</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Day 9 — Flashcard Learning App</h1>
+        <p>Create and flip flashcards. (Uses LocalStorage + CSS 3D flip)</p>
+      </div>
+
+      <div class="controls">
+        <button id="addBtn">+ New Card</button>
+        <button id="exportBtn" class="outline">Export</button>
+        <button id="importBtn" class="outline">Import</button>
+        <button id="clearBtn" class="outline">Clear All</button>
+      </div>
+    </header>
+
+    <section id="formArea" class="form-card" style="display:none">
+      <label for="question">Question</label>
+      <textarea id="question" placeholder="Type the question — spaces and new lines are preserved"></textarea>
+
+      <label for="answer" style="margin-top:8px">Answer</label>
+      <textarea id="answer" placeholder="Type the answer — spaces and new lines are preserved"></textarea>
+
+      <div class="row" style="margin-top:10px">
+        <div style="display:flex;gap:8px">
+          <button id="saveCard">Save Card</button>
+          <button id="cancelSave" class="ghost">Cancel</button>
+        </div>
+        <div style="display:flex;justify-content:flex-end">
+          <small style="color:var(--muted)">Cards are stored in LocalStorage</small>
+        </div>
+      </div>
+    </section>
+
+    <main id="cardsWrap">
+      <div id="grid" class="grid">
+        <!-- cards appear here -->
+      </div>
+
+      <div id="empty" class="empty" style="display:none">
+        No flashcards yet — click "New Card" to add some. Try pressing a card to flip it.
+      </div>
+    </main>
+
+    <footer>
+      Tip: Click a card to flip. Use the small action buttons to reveal, edit or delete.
+    </footer>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
