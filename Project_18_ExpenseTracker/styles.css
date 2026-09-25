@@ -1,0 +1,155 @@
+:root {
+  --bg: #071026;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --green: #10b981;
+  --red: #ef4444;
+  --white: #e6eef6;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #002252;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.card {
+  width: min(650px, 100%);
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7c3aed, #22c1c3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.lead {
+  color: var(--muted);
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.box {
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+.box.green {
+  border-left: 4px solid var(--green);
+}
+
+.box.red {
+  border-left: 4px solid var(--red);
+}
+
+.big {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.add {
+  margin-top: 25px;
+}
+
+label {
+  display: block;
+  margin: 12px 0;
+}
+
+label span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--white);
+  outline: none;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: linear-gradient(90deg, #7c3aed, #22c1c3);
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.list {
+  margin-top: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.04);
+  border-left: 4px solid;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.list .text {
+  flex: 1;
+  margin-left: 8px;
+}
+
+.list .amount.green {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.list .amount.red {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.del-btn {
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 18px;
+}
