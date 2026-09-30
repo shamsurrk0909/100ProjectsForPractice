@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 12 — QR Code Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <header>
+      <div class="logo">QR</div>
+      <div>
+        <h1 id="title">Day 12: QR Code Generator</h1>
+        <p class="lead">Generate and download QR codes from any text using the QRServer API and <code>fetch()</code>.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <label class="field">
+        <span class="label">Text or URL</span>
+        <textarea id="inputText" placeholder="Enter a URL or text to convert to QR code" rows="3"></textarea>
+      </label>
+
+      <div class="row">
+        <label class="field small">
+          <span class="label">Size (px)</span>
+          <input id="size" type="number" min="100" max="2000" value="300" />
+        </label>
+
+        <label class="field small">
+          <span class="label">Margin (0-10)</span>
+          <input id="margin" type="number" min="0" max="10" value="2" />
+        </label>
+
+        <label class="field small">
+          <span class="label">Error correction</span>
+          <select id="ecc">
+            <option value="L">L (7%)</option>
+            <option value="M" selected>M (15%)</option>
+            <option value="Q">Q (25%)</option>
+            <option value="H">H (30%)</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" class="btn">Generate QR</button>
+        <button id="openBtn" class="btn secondary" disabled>Open in new tab</button>
+        <button id="downloadBtn" class="btn secondary" disabled>Download PNG</button>
+      </div>
+
+      <div id="status" class="muted" aria-live="polite">Enter text and click <strong>Generate QR</strong>.</div>
+
+      <div class="preview-wrap">
+        <div id="preview" class="preview" aria-hidden="true">
+          <!-- generated QR image will be inserted here -->
+        </div>
+      </div>
+
+      <details style="margin-top:12px">
+        <summary>How it works (short)</summary>
+        <p class="small">The script builds a query URL (e.g. <code>https://api.qrserver.com/v1/create-qr-code/?size=300x300&amp;data=...&amp;ecc=M&amp;margin=2</code>), calls it with <code>fetch()</code> and receives the PNG image as a blob. We create an object URL and display it in an &lt;img&gt; tag and allow the user to download or open the image in a new tab.</p>
+      </details>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
