@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Day 15 — Light/Dark Mode Toggle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card" role="main">
+    <header class="head">
+      <h1>Day 15: Light / Dark Mode Toggle</h1>
+      <p class="lead">Switch themes with one click. Your preference is saved.</p>
+
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle Theme">
+        <span id="themeIcon">🌙</span>
+      </button>
+    </header>
+
+    <section>
+      <p>
+        This is a demo of a light/dark theme switcher using CSS variables and LocalStorage.
+        Click on the moon/sun icon above to change the theme.
+      </p>
+    </section>
+
+    <details>
+      <summary>How it works (short)</summary>
+      <p class="small">
+        The website uses a <code>data-theme</code> attribute on the HTML tag.
+        CSS variables define the theme colors. JavaScript toggles the attribute
+        and saves the choice in LocalStorage. On page load, the saved theme is applied.
+      </p>
+    </details>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
