@@ -1,0 +1,108 @@
+:root {
+  --progress-height: 6px;
+  --progress-bg: rgba(255, 255, 255, 0.04);
+  --progress-color: linear-gradient(90deg, #7c3aed, #06b6d4);
+  /* gradient fill */
+  --progress-transition: width 160ms linear;
+  --hide-offset: 8px;
+  /* distance from top to hide when at very top */
+}
+
+/* page reset & layout */
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: #002252;
+  color: #e6eef6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 920px;
+  margin: 48px auto;
+  padding: 0 20px;
+}
+
+/* progress container - fixed at top */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--progress-height);
+  background: var(--progress-bg);
+  z-index: 9999;
+  display: block;
+  pointer-events: none;
+  /* avoid intercepting clicks */
+  transition: transform 280ms ease, opacity 220ms ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* hidden state (when at very top) */
+.scroll-progress.hidden {
+  transform: translateY(calc(-1 * (var(--progress-height) + 4px)));
+  opacity: 0;
+}
+
+/* inner fill bar */
+.scroll-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: var(--progress-color);
+  background-clip: padding-box;
+  /* allow color to be gradient or single color */
+  transition: var(--progress-transition);
+  will-change: width;
+}
+
+/* header + content styling for demo */
+.site-header {
+  padding: 32px 0 12px;
+}
+
+.site-header h1 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.lead {
+  margin: 0 0 6px;
+  color: #9aa4b2;
+}
+
+/* article content styling */
+.content {
+  line-height: 1.7;
+  color: #dfe9f5;
+}
+
+.content h2 {
+  margin-top: 28px;
+  font-size: 18px;
+  color: #e6eef6;
+}
+
+.content p {
+  margin: 12px 0;
+  color: #cbd8e6
+}
+
+/* small screens tweak */
+@media (max-width:520px) {
+  :root {
+    --progress-height: 5px;
+  }
+
+  .page {
+    margin: 28px auto;
+    padding: 0 14px;
+  }
+}
