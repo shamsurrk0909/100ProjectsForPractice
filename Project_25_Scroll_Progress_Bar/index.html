@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 16 — Scroll Progress Bar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Progress bar (kept outside main content so it's always at top) -->
+  <div id="scrollProgress" class="scroll-progress" role="progressbar"
+       aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="scroll-progress__bar" id="scrollProgressBar"></div>
+  </div>
+
+  <main class="page">
+    <header class="site-header">
+      <h1>Day 16: Scroll Progress Bar</h1>
+      <p class="lead">A tiny, performant progress indicator that follows the user's scroll position.</p>
+    </header>
+
+    <article class="content">
+      <!-- Example long content: copy / paste your own content here -->
+      <section>
+        <h2>Introduction</h2>
+        <p>Scroll down to see the progress bar fill as you move through the page. The progress is calculated as the percent of content scrolled and updated using requestAnimationFrame for smooth animations.</p>
+      </section>
+
+      <!-- repeat filler content to make page long enough to scroll -->
+      <section>
+        <h2>Section 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut ...</p>
+        <p>(Repeat multiple paragraphs for demo.)</p>
+      </section>
+
+      <section>
+        <h2>Section 2</h2>
+        <p>Donec mollis, arcu a convallis efficitur, tortor elit pharetra arcu, quis ...</p>
+      </section>
+
+      <section>
+        <h2>Section 3</h2>
+        <p>More content... (Use real article or documentation content in production.)</p>
+      </section>
+
+
+
+      <!-- add more content to make the demo scrollable -->
+      <div style="height:500px;"></div>
+
+      <footer style="padding:40px 0 80px; color: #9aa4b2;">
+        <p>End of demo content.</p>
+      </footer>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
