@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 17 — Clipboard Copy Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <header>
+      <div class="logo">CC</div>
+      <div>
+        <h1 id="title">Day 17: Clipboard Copy Tool</h1>
+        <p class="lead">Click a button to copy text to the clipboard using the Clipboard API (with a fallback).</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <label class="field">
+        <span class="label">Short text</span>
+        <div class="row">
+          <input id="shortText" type="text" value="Hello, copy me!" />
+          <button class="btn copy-btn" data-copy-target="#shortText">Copy</button>
+        </div>
+      </label>
+
+      <label class="field">
+        <span class="label">Email</span>
+        <div class="row">
+          <input id="email" type="email" value="user@example.com" />
+          <button class="btn copy-btn" data-copy-target="#email">Copy</button>
+        </div>
+      </label>
+
+      <label class="field">
+        <span class="label">Multi-line / message</span>
+        <div class="row">
+          <textarea id="message" rows="3">This is a longer message you can copy to clipboard.</textarea>
+          <button class="btn copy-btn" data-copy-target="#message">Copy</button>
+        </div>
+      </label>
+
+      <label class="field">
+        <span class="label">Code snippet</span>
+        <pre class="code-block" id="codeBlock" tabindex="0"><code>const sum = (a, b) => a + b;</code></pre>
+        <div style="display:flex; gap:8px; margin-top:8px;">
+          <button class="btn copy-btn" data-copy-target="#codeBlock">Copy code</button>
+          <button class="btn" id="copyAll">Copy All Fields</button>
+        </div>
+      </label>
+
+      <div id="status" class="muted" aria-live="polite">Ready to copy.</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
