@@ -1,0 +1,139 @@
+:root {
+  --bg: #071026;
+  --card: #0b1220;
+  --accent: #7c3aed;
+  --muted: #9aa4b2;
+  --white: #e6eef6;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #002252;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.card {
+  width: min(760px, 96%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #22c1c3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.lead {
+  margin: 4px 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+.label {
+  font-size: 13px;
+  color: var(--muted)
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+  outline: none;
+  min-width: 0;
+}
+
+.code-block {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  overflow: auto;
+  font-family: ui-monospace, monospace;
+}
+
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 0;
+  background: linear-gradient(90deg, var(--accent), #22c1c3);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copy-btn.copied {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--muted);
+  animation: pop 220ms ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.98);
+    opacity: 0.7
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1
+  }
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px
+}
