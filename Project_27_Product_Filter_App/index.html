@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 19 — Product Filter List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <header>
+      <div class="logo">PF</div>
+      <div>
+        <h1 id="title">Day 19: Product Filter List</h1>
+        <p class="lead">Filter and search products in real-time using <code>Array.filter()</code> and DOM rendering.</p>
+      </div>
+    </header>
+
+    <section class="controls-grid">
+      <div class="control">
+        <label for="search" class="small">Search</label>
+        <input id="search" type="search" placeholder="Search by name or description" />
+      </div>
+
+      <div class="control">
+        <label for="category" class="small">Category</label>
+        <select id="category">
+          <option value="">All categories</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label class="small">Price range</label>
+        <div class="range-row">
+          <input id="minPrice" type="number" min="0" step="1" placeholder="Min" />
+          <span class="muted">—</span>
+          <input id="maxPrice" type="number" min="0" step="1" placeholder="Max" />
+        </div>
+      </div>
+
+      <div class="control">
+        <label class="small" style="display:flex;align-items:center;gap:8px;">
+          <input id="inStock" type="checkbox" /> <span>In stock only</span>
+        </label>
+
+        <label class="small" style="margin-top:8px;display:block;">
+          Sort
+          <select id="sort">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="name-asc">Name: A → Z</option>
+            <option value="name-desc">Name: Z → A</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="meta-row">
+      <div id="resultCount" class="muted">Showing 0 products</div>
+      <div id="clearBtnWrap"><button id="clearFilters" class="btn secondary">Clear filters</button></div>
+    </section>
+
+    <section id="products" class="products-grid" aria-live="polite">
+      <!-- product cards rendered here -->
+    </section>
+
+    <template id="productTpl">
+      <article class="product-card">
+        <img class="p-img" src="" alt="" />
+        <div class="p-body">
+          <h3 class="p-title"></h3>
+          <p class="p-desc"></p>
+          <div class="p-meta">
+            <div class="p-price"></div>
+            <div class="p-stock"></div>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <details style="margin-top:12px">
+      <summary>How it works (short)</summary>
+      <p class="small">The JS keeps a products array. On any control change, it builds a filtered array using `filter()` chained with conditions from search text, category, price, and stock flags. Then it sorts (if requested) and re-renders the product cards.</p>
+    </details>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
