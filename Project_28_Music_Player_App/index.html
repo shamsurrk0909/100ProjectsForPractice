@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 20 — Music Player App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <header class="top">
+      <div>
+        <h1 id="title">Day 20: Music Player App</h1>
+        <p class="lead">Mini music player demonstrating the Audio API, event listeners and state management.</p>
+      </div>
+    </header>
+
+    <section class="player">
+      <div class="now-playing">
+        <img id="cover" class="cover" src="https://picsum.photos/300?random=10" alt="Album art" />
+        <div class="meta">
+          <div id="trackTitle" class="title">Track Title</div>
+          <div id="trackArtist" class="artist">Artist</div>
+
+          <div class="progress-wrap" aria-label="Track progress">
+            <div id="progressContainer" class="progress-container" role="slider" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div id="progress" class="progress"></div>
+            </div>
+            <div class="time-row">
+              <span id="currentTime">0:00</span>
+              <span id="duration">0:00</span>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button id="prevBtn" class="btn" title="Previous (Arrow Left)">⏮</button>
+            <button id="playPauseBtn" class="btn primary" title="Play / Pause (Space)">▶</button>
+            <button id="nextBtn" class="btn" title="Next (Arrow Right)">⏭</button>
+
+            <button id="shuffleBtn" class="btn" title="Shuffle">🔀</button>
+            <button id="repeatBtn" class="btn" title="Repeat">🔁</button>
+
+            <div class="vol">
+              <button id="muteBtn" class="btn" title="Mute">🔈</button>
+              <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="playlist" aria-label="Playlist">
+        <h3>Playlist</h3>
+        <ol id="playlistList" class="playlist-list"></ol>
+      </aside>
+    </section>
+
+    <audio id="audio" preload="metadata"></audio>
+
+    <details style="margin-top:12px">
+      <summary>How it works (short)</summary>
+      <p class="small">JS controls a single &lt;audio&gt; element. Controls call play/pause/seek functions. The `timeupdate` event updates the progress bar and time labels. Playlist is an array of track objects (src, title, artist, cover).</p>
+    </details>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
