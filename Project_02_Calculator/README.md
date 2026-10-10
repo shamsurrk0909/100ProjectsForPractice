@@ -38,7 +38,7 @@ git clone https://github.com/yourusername/shamsur-calculator.git
 
 ---
 
-## 🎯 How to Use
+## 🎯 How to Use the App
 
 1. Click buttons or use your keyboard
 2. Press `=` or `Enter` to calculate
