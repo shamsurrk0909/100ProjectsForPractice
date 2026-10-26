@@ -1,38 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css" />
-        <title>Car Rental Service || 100 JavaScript Projects</title>
-    </head>
-    <body>
-        <header>
-            <h1>Car Rental Service</h1>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Car Rental Service || 100 JavaScript Projects</title>
+  </head>
+  <body>
+    <header>
+      <h1>🚗 Car Rental Service</h1>
+      <p class="subtitle">Rent your dream car in seconds</p>
+    </header>
 
-        <section id="carList">
-            <!-- Car listing will be displayed here using JavaScript -->
-        </section>
+    <section id="carList">
+      <p class="loading">Loading cars...</p>
+    </section>
 
-        <section id="bookingForm">
-            <h2>Book a Car</h2>
-            <form id="bookingForm">
-                <label for="carSelect">Select a Car:</label>
-                <select id="carSelect" required></select>
+    <section id="bookingSection">
+      <h2>Book a Car</h2>
+      <form id="bookingForm">
+        <label for="carSelect">Select a Car</label>
+        <select id="carSelect" required></select>
 
-                <label for="pickupDate">Pickup Date:</label>
-                <input type="date" id="pickupDate" required />
+        <label for="pickupDate">Pickup Date</label>
+        <input type="date" id="pickupDate" required />
 
-                <label for="returnDate">Return Date:</label>
-                <input type="date" id="returnDate" required />
+        <label for="returnDate">Return Date</label>
+        <input type="date" id="returnDate" required />
 
-                <button type="button" onclick="submitBooking()">
-                    Book Now
-                </button>
-            </form>
-        </section>
+        <p id="totalPrice" class="total-price">Total: —</p>
 
-        <script src="script.js"></script>
-    </body>
+        <button type="submit">Book Now</button>
+      </form>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
 </html>
