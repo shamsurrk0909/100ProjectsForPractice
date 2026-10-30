@@ -38,7 +38,7 @@ This is a **Quiz Game** that tests your knowledge with 5 fun questions. It featu
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Structure folder
 
 ```
 
