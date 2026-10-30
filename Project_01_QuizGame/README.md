@@ -53,7 +53,7 @@ Project-01_QuizGame/
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run the app
 
 ### Option 1: Run Locally in your computer
 
