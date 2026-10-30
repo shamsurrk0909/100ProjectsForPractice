@@ -55,7 +55,7 @@ Project-01_QuizGame/
 
 ## 🚀 How to Run
 
-### Option 1: Run Locally
+### Option 1: Run Locally in your computer
 
 1. **Clone the repository**
    ```bash
