@@ -8,7 +8,7 @@
 
 This is a **Quiz Game** that tests your knowledge with 5 fun questions. It features a clean interface, instant feedback on answers, score tracking, and a progress bar. Built as my first project in the 100 Projects Learning Journey.
 
-### 🎯 Purpose
+### 🎯 Purpose of the project
 
 - Practice DOM manipulation with JavaScript
 - Build a complete interactive web application
