@@ -6,7 +6,7 @@ A QR code generator that creates downloadable QR codes from any text or URL.
 
 This project is a QR code generator built with HTML, CSS, and JavaScript. It uses the QRServer API to generate QR codes from text or URLs. Users can customize size, margin, and error correction level, then preview, download, or open the QR code in a new tab.
 
-## ✨ Features and chrateristics
+## ✨ Features and charateristics
 
 - **Generate QR Codes**: Convert any text or URL into a QR code
 - **Customizable Size**: Set size from 100px to 2000px
