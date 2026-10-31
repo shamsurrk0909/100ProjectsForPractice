@@ -36,7 +36,7 @@ QR Code Generator/
 └── README.md       # Project documentation
 ```
 
-## 🚀 How to Use
+## 🚀 How to Use the app
 
 1. Clone or download the repository
 2. Open `index.html` in your web browser
